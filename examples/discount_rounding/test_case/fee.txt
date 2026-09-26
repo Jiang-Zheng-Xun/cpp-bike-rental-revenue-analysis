@@ -1,0 +1,6 @@
+electric 5 7
+lady 4 6
+road 3 5
+1
+0.8
+6

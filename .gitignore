@@ -1,0 +1,28 @@
+# Build products
+/build/
+*.o
+*.out
+*.exe
+
+# Generated program output, including output within examples
+**/part1_response.txt
+**/part1_status.txt
+**/part2_response.txt
+**/part2_status.txt
+
+# Course-provided and local-only inputs
+/test_case/
+/open_basic*/
+*.pdf
+108061804*
+*_report.pdf
+
+# Local working evidence and downloaded patches
+/baseline/
+/working/
+/verification*/
+*.patch
+
+# Editor and operating-system metadata
+.vscode/
+*:Zone.Identifier
