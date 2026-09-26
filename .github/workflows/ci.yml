@@ -1,0 +1,22 @@
+name: C++ regression
+
+"on":
+  push:
+    branches:
+      - main
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+      - name: Compile and run regression cases
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
