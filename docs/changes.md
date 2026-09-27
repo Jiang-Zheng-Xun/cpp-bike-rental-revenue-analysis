@@ -48,10 +48,14 @@ source separately, and reran targeted cases and regression inputs.
 | open_basic2 | 375,995 | 393,356 | +17,361 |
 | open_basic3 | 1,680,165 | 1,701,461 | +21,296 |
 
-For these three cases, the output retained every input event, provided one
-response immediately after each rental, and listed the same total number of
-bikes before and after processing. These checks do not establish correctness
-on hidden cases or prove that the revenue is maximal.
+This table compares Part 1 and the reviewed Part 2 policy, not revenue before
+and after AI-assisted changes. These course-provided inputs remain local.
+For these three cases, local checks found that the output retained every input
+event, provided one response immediately after each rental, and listed the
+same total number of bikes before and after processing. The publicly
+reproducible automated tests cover the included boundary cases. Neither
+set of checks establishes correctness on hidden cases or proves that revenue
+is maximal.
 
 ## Reproduce the included example
 
