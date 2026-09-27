@@ -1,0 +1,4 @@
+rent 5 road 00001 0
+return 6 00001 8
+rent 5 road 00002 20
+return 6 00002 30

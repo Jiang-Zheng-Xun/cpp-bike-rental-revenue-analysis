@@ -110,6 +110,29 @@ class BikeRentalRegressionTest(unittest.TestCase):
         )
         self.assertEqual(output["part2_status.txt"][-1], "240")
 
+    def test_multistation_shortest_time_pricing(self):
+        example = ROOT / "examples" / "graph_pricing" / "test_case"
+        inputs = {
+            name: (example / name).read_text(encoding="utf-8")
+            for name in ("map.txt", "station.txt", "fee.txt", "user.txt")
+        }
+        output = self.run_case(inputs)
+
+        self.assertEqual(
+            output["part1_response.txt"],
+            [
+                "rent 5 road 00001 0",
+                "accept",
+                "return 6 00001 8",
+                "rent 5 road 00002 20",
+                "accept",
+                "return 6 00002 30",
+            ],
+        )
+        status = output["part1_status.txt"]
+        self.assertEqual(status[-1], "370")
+        station_6 = status.index("6:")
+        self.assertEqual(status[station_6 + 3].strip(), "road:500 501")
 
 if __name__ == "__main__":
     unittest.main()

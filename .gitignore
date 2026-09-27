@@ -26,3 +26,7 @@
 # Editor and operating-system metadata
 .vscode/
 *:Zone.Identifier
+
+# Python test cache
+__pycache__/
+*.py[cod]
